@@ -2,7 +2,7 @@
 
   <div>
 
-    Halo nama saya adalah {{name}}
+    Ini adalah angka {{number}}
   </div>
   
 </template>
@@ -12,15 +12,14 @@ import {ref } from 'vue';
 
 export default {
   setup(){
-    const name = ref("Jazuli")
+    const number = ref(0)
   
-    setTimeout( () => {
+    setInterval( () => {
     
-      name.value = "Muhammad"
-
-    }, 2000)
+      number.value++
+    }, 500)
     return {
-      name
+      number
     }
   }
 
