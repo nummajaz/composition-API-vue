@@ -2,15 +2,15 @@
 
   <div>
 
-    Halo nama saya adalah {{state.user.name}} <br>
-    status saya adalah {{state.loading}}
+    Halo nama saya adalah {{user.name}} <br>
+    status saya adalah {{loading}}
 
   </div>
   
 </template>
 
 <script>
-import {reactive} from 'vue';
+import {reactive, toRef} from 'vue';
 
 export default {
   setup(){
@@ -32,7 +32,7 @@ export default {
     }, 2000)
     
     return{
-      state
+      ...toRef(state)
     }
   }
 
